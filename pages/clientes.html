@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes | Sistema de Ventas</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <header class="encabezado">
+        <div class="marca">
+            <img src="../img/logo.svg" alt="Logo" class="logo">
+            <h1>VentasPro</h1>
+        </div>
+        <div class="usuario-info">
+            <span id="nombre-usuario">Administrador</span>
+            <button id="btn-salir" class="btn-secundario">Cerrar Sesión</button>
+        </div>
+    </header>
+
+    <nav class="navegacion">
+        <ul>
+            <li><a href="inicio.html">Ventas</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="clientes.html" class="activo">Clientes</a></li>
+        </ul>
+    </nav>
+
+    <main class="contenedor-principal">
+        <section class="contenido">
+            <article class="tarjeta">
+                <h2>Registrar Cliente</h2>
+                <form id="form-cliente" class="formulario-grid">
+                    <div class="campo">
+                        <label for="cli-ci">CI / NIT</label>
+                        <input type="text" id="cli-ci" placeholder="Ej: 8459210" required>
+                    </div>
+                    <div class="campo">
+                        <label for="cli-nombre">Nombre Completo</label>
+                        <input type="text" id="cli-nombre" placeholder="Ej: María Mamani" required>
+                    </div>
+                    <div class="campo">
+                        <label for="cli-telefono">Teléfono / Celular</label>
+                        <input type="tel" id="cli-telefono" placeholder="Ej: 71500000" required>
+                    </div>
+                    <div class="campo campo-boton">
+                        <button type="submit" class="btn-primario">Guardar Cliente</button>
+                    </div>
+                </form>
+            </article>
+
+            <article class="tarjeta">
+                <h2>Cartera de Clientes</h2>
+                <div class="tabla-responsiva">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>CI / NIT</th>
+                                <th>Nombre</th>
+                                <th>Teléfono</th>
+                                <th>Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabla-clientes"></tbody>
+                    </table>
+                </div>
+            </article>
+        </section>
+
+        <aside class="barra-lateral">
+            <article class="tarjeta resumen">
+                <h3>Resumen de Clientes</h3>
+                <div class="dato-kpi">
+                    <span>Total Registrados</span>
+                    <strong id="kpi-clientes">0</strong>
+                </div>
+                <p class="texto-ayuda">Seleccione cualquier cliente registrado al momento de emitir una venta.</p>
+            </article>
+        </aside>
+    </main>
+
+    <footer class="pie-pagina">
+        <p>&copy; 2026 Sistema de Ventas | Instituto Tecnológico Bolivia Mar</p>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

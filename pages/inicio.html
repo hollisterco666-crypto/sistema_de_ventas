@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ventas | Sistema de Ventas</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <header class="encabezado">
+        <div class="marca">
+            <img src="../img/logo.svg" alt="Logo" class="logo">
+            <h1>VentasPro</h1>
+        </div>
+        <div class="usuario-info">
+            <span id="nombre-usuario">Administrador</span>
+            <button id="btn-salir" class="btn-secundario">Cerrar Sesión</button>
+        </div>
+    </header>
+
+    <nav class="navegacion">
+        <ul>
+            <li><a href="inicio.html" class="activo">Ventas</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="clientes.html">Clientes</a></li>
+        </ul>
+    </nav>
+
+    <main class="contenedor-principal">
+        <section class="contenido">
+            <article class="tarjeta">
+                <h2>Registrar Nueva Venta</h2>
+                <form id="form-venta" class="formulario-grid">
+                    <div class="campo">
+                        <label for="venta-cliente">Cliente</label>
+                        <select id="venta-cliente" required></select>
+                    </div>
+                    <div class="campo">
+                        <label for="venta-producto">Producto</label>
+                        <select id="venta-producto" required></select>
+                    </div>
+                    <div class="campo">
+                        <label for="venta-cantidad">Cantidad</label>
+                        <input type="number" id="venta-cantidad" min="1" value="1" required>
+                    </div>
+                    <div class="campo campo-boton">
+                        <button type="submit" class="btn-primario">Registrar Venta</button>
+                    </div>
+                </form>
+                <p id="alerta-venta" class="error-oculto"></p>
+            </article>
+
+            <article class="tarjeta">
+                <h2>Historial de Ventas</h2>
+                <div class="tabla-responsiva">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Fecha</th>
+                                <th>Cliente</th>
+                                <th>Producto</th>
+                                <th>Cant.</th>
+                                <th>Total (Bs.)</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabla-ventas"></tbody>
+                    </table>
+                </div>
+            </article>
+        </section>
+
+        <aside class="barra-lateral">
+            <article class="tarjeta resumen">
+                <h3>Resumen General</h3>
+                <div class="dato-kpi">
+                    <span>Ventas Realizadas</span>
+                    <strong id="kpi-ventas">0</strong>
+                </div>
+                <div class="dato-kpi">
+                    <span>Ingresos Totales</span>
+                    <strong id="kpi-ingresos">Bs. 0.00</strong>
+                </div>
+                <div class="dato-kpi">
+                    <span>Productos en Catálogo</span>
+                    <strong id="kpi-productos">0</strong>
+                </div>
+            </article>
+        </aside>
+    </main>
+
+    <footer class="pie-pagina">
+        <p>&copy; 2026 Sistema de Ventas | Instituto Tecnológico Bolivia Mar</p>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

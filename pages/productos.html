@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos | Sistema de Ventas</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <header class="encabezado">
+        <div class="marca">
+            <img src="../img/logo.svg" alt="Logo" class="logo">
+            <h1>VentasPro</h1>
+        </div>
+        <div class="usuario-info">
+            <span id="nombre-usuario">Administrador</span>
+            <button id="btn-salir" class="btn-secundario">Cerrar Sesión</button>
+        </div>
+    </header>
+
+    <nav class="navegacion">
+        <ul>
+            <li><a href="inicio.html">Ventas</a></li>
+            <li><a href="productos.html" class="activo">Productos</a></li>
+            <li><a href="clientes.html">Clientes</a></li>
+        </ul>
+    </nav>
+
+    <main class="contenedor-principal">
+        <section class="contenido">
+            <article class="tarjeta">
+                <h2>Agregar Producto</h2>
+                <form id="form-producto" class="formulario-grid">
+                    <div class="campo">
+                        <label for="prod-nombre">Nombre del Producto</label>
+                        <input type="text" id="prod-nombre" placeholder="Ej: Teclado Mecánico" required>
+                    </div>
+                    <div class="campo">
+                        <label for="prod-precio">Precio Unitario (Bs.)</label>
+                        <input type="number" id="prod-precio" step="0.01" min="0.1" placeholder="0.00" required>
+                    </div>
+                    <div class="campo">
+                        <label for="prod-stock">Stock Disponible</label>
+                        <input type="number" id="prod-stock" min="1" placeholder="10" required>
+                    </div>
+                    <div class="campo campo-boton">
+                        <button type="submit" class="btn-primario">Guardar Producto</button>
+                    </div>
+                </form>
+            </article>
+
+            <article class="tarjeta">
+                <h2>Inventario de Productos</h2>
+                <div class="tabla-responsiva">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Producto</th>
+                                <th>Precio (Bs.)</th>
+                                <th>Stock</th>
+                                <th>Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabla-productos"></tbody>
+                    </table>
+                </div>
+            </article>
+        </section>
+
+        <aside class="barra-lateral">
+            <article class="tarjeta resumen">
+                <h3>Control de Stock</h3>
+                <p class="texto-ayuda">Los productos con 5 o menos unidades se marcan como stock bajo.</p>
+                <div class="dato-kpi">
+                    <span>Alertas de Stock Bajo</span>
+                    <strong id="kpi-stock-bajo">0</strong>
+                </div>
+            </article>
+        </aside>
+    </main>
+
+    <footer class="pie-pagina">
+        <p>&copy; 2026 Sistema de Ventas | Instituto Tecnológico Bolivia Mar</p>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
